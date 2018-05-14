@@ -1090,7 +1090,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
     public void run() {
       
     	//estetica de la aplicacion
-    	GImage fondoo = new GImage("fondoo.jpg" );
+    	GImage fondoo = new GImage("fondoo.jpg" );//fondo
     	add(fondoo);
     	fondoo.setSize(1500,1200);//estetica de la aplicacion
     	GLabel bienvenida = new GLabel("Homicidios del 2017 en  las capitales de los departamentos de Colombia");
@@ -1101,7 +1101,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
     	add(combo1,60,60);//se agrega el comobo box de los departamentos
     	// add(new JButton("cerrar"),NORTH);
     	addActionListeners();// se agrega los eventos que se realizar en itemsevents
-       
+           
     	
        
   
