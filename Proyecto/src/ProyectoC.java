@@ -20,14 +20,14 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
  
     public String asesinato(String fecha ,String edad ,String como_murio ,String asesino) { /*metodo para organizar los datos de la vicitma*/
     	
-		return ("fecha de asesinato: "+fecha+ "\nfue asesinado a sus " + edad +" aÒos " + como_murio + " \nasesino: " + asesino);
+		return ("fecha de asesinato: "+fecha+ "\nfue asesinado a sus " + edad +" a√±os " + como_murio + " \nasesino: " + asesino);
     
     	
     }
    
     public ProyectoC() { /*constructor sin parametros para alamacenar el Jcombobox*/
     	 
-    	/*diseÒo grafico del combobox*/
+    	/*dise√±o grafico del combobox*/
     	 UIManager.put("ComboBox.background", new ColorUIResource(247,106,106));
         combo1=new JComboBox();
         combo1.setFont(new Font("Serif", Font.BOLD, 20));
@@ -38,10 +38,11 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
         combo1.addItem("Antioquia");
         combo1.addItem("Arauca");
         combo1.addItem("Atlantico");
-        combo1.addItem("Bogot· D.C");
+        combo1.addItem("Bogot√° D.C");
         combo1.addItem("Boyaca");
+        combo1.addItem("Bol√≠var");
         combo1.addItem("Caldas");
-        combo1.addItem("Caquet·");
+        combo1.addItem("Caquet√°");
         combo1.addItem("Cauca");
         combo1.addItem("Cesar");
         combo1.addItem("Choco");
@@ -53,7 +54,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
         combo1.addItem("Huila");
         combo1.addItem("Magdalena");
         combo1.addItem("Meta");
-        combo1.addItem("NariÒo");
+        combo1.addItem("Nari√±o");
         combo1.addItem("Norte De Santander");
         combo1.addItem("Putumayo");
         combo1.addItem("Quindio");
@@ -72,15 +73,15 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
            
 
     
-/*metodo principal para interacciÛn usuario -aplicaciÛn*/
+/*metodo principal para interacci√≥n usuario -aplicaci√≥n*/
     public void itemStateChanged(ItemEvent e) {
-    	/*condicional para darle una funciÛn a cada item*/
+    	/*condicional para darle una funci√≥n a cada item*/
         if (combo1.getSelectedItem()=="Amazonas") {
         	UIManager UI= new UIManager();
-        	UI.put("OptionPane.background", new ColorUIResource(14,242,242));/*diseÒo del pane*/
-        	UI.put("Panel.background", new ColorUIResource(16,200,242)); /*diseÒo del pane*/
+        	UI.put("OptionPane.background", new ColorUIResource(14,242,242));/*dise√±o del pane*/
+        	UI.put("Panel.background", new ColorUIResource(16,200,242)); /*dise√±o del pane*/
 
-        	UIManager.put("OptionPane.messageFont", new Font("Berlin Sans FB Demi", Font.BOLD, 17));/*diseÒo del pane*/
+        	UIManager.put("OptionPane.messageFont", new Font("Berlin Sans FB Demi", Font.BOLD, 17));/*dise√±o del pane*/
         	  
 
         
@@ -131,13 +132,141 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 						    JOptionPane.PLAIN_MESSAGE);}
 				if(f=="sexo") {
 					JOptionPane.showMessageDialog(combo1,
-						    "*01/01/2017 se desconoce datos de la vÌctima y del asesino",
+						    "*01/01/2017 se desconoce datos de la v√≠ctima y del asesino",
 						    "Wilson Galeano Rodriguez",
 						    JOptionPane.PLAIN_MESSAGE);}
 			}
 			
         }
+       
+        if (combo1.getSelectedItem()=="Bol√≠var") {
+        	UIManager UI= new UIManager();
+        	UI.put("OptionPane.background", new ColorUIResource(14,242,242));/*dise√±o del pane*/
+        	UI.put("Panel.background", new ColorUIResource(16,200,242)); /*dise√±o del pane*/
+
+        	UIManager.put("OptionPane.messageFont", new Font("Berlin Sans FB Demi", Font.BOLD, 17));/*dise√±o del pane*/
+        	  
+
+        
+        	Object[] CapitalBOLIVAR = {"Cartagena"};
+        	Object s = (Object)JOptionPane.showInputDialog(
+        	                    null 
+        	                    ,
+        	                    "Esta es la capital de Bol√≠var dale 'Ok'"//mensaje del pane
+        	                    ,
+        	                    "SANTANDER",//titulo
+        	                    JOptionPane.PLAIN_MESSAGE,
+        	                    null, CapitalBOLIVAR, //lista
+        	                    "");
+        
+        
+			if (s=="Cartagena") {
+				Object[] victimas1 = {"fecha", "edad", "sexo"};
+				String f = (String)JOptionPane.showInputDialog(
+				                    null,
+				                    "Elige el filtro de tu busqueda",
+				                    "CARTAGENA",
+				                    JOptionPane.PLAIN_MESSAGE,
+				                    null,
+				                    victimas1,
+				                "");
+				if (f=="fecha") {
+					Object[] intervalos = {"0-10", "10-20", "20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"};
+					String i = (String)JOptionPane.showInputDialog(
+					                    null,
+					                    "Elige un intervalo de edad",
+					                    "Fecha",
+					                    JOptionPane.PLAIN_MESSAGE,
+					                    null,
+					                    intervalos,
+				                  "");
+					if(i=="0-10") {
+						SimpleTable3 frame = new SimpleTable3(); 
+				    	frame.pack(); 
+				    	frame.setVisible(true); 
+					
+					}
+				
+				}
+				if(f=="edad"){
+					JOptionPane.showMessageDialog(combo1,
+						    asesinato("01/07/2017", "41" ,", fue hallado con  multiples heridas a la altura de la cabeza y una herida en el flanco izquierdo, al parecer causadas con arma blanca","se desconoce"),
+						    "Jean Carlos Caceres Vergara",
+						    JOptionPane.PLAIN_MESSAGE);}
+				if(f=="sexo") {
+					JOptionPane.showMessageDialog(combo1,
+						    "*01/01/2017 se desconoce datos de la v√≠ctima y del asesino",
+						    "Wilson Galeano Rodriguez",
+						    JOptionPane.PLAIN_MESSAGE);}
+			}
 			
+        }
+        if (combo1.getSelectedItem()=="Santander") {
+        	UIManager UI= new UIManager();
+        	UI.put("OptionPane.background", new ColorUIResource(14,242,242));/*dise√±o del pane*/
+        	UI.put("Panel.background", new ColorUIResource(16,200,242)); /*dise√±o del pane*/
+
+        	UIManager.put("OptionPane.messageFont", new Font("Berlin Sans FB Demi", Font.BOLD, 17));/*dise√±o del pane*/
+        	  
+
+        
+        	Object[] CapitalSANTANDER = {"Bucaramanga"};
+        	Object s = (Object)JOptionPane.showInputDialog(
+        	                    null 
+        	                    ,
+        	                    "Esta es la capital de Santander dale 'Ok'"//mensaje del pane
+        	                    ,
+        	                    "SANTANDER",//titulo
+        	                    JOptionPane.PLAIN_MESSAGE,
+        	                    null, CapitalSANTANDER, //lista
+        	                    "");
+        
+        
+			if (s=="Bucaramanga") {
+				Object[] victimas1 = {"fecha", "edad", "sexo"};
+				String f = (String)JOptionPane.showInputDialog(
+				                    null,
+				                    "Elige el filtro de tu busqueda",
+				                    "BUCARAMANGA",
+				                    JOptionPane.PLAIN_MESSAGE,
+				                    null,
+				                    victimas1,
+				                "");
+				if (f=="fecha") {
+					Object[] intervalos = {"0-10", "10-20", "20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"};
+					String i = (String)JOptionPane.showInputDialog(
+					                    null,
+					                    "Elige un intervalo de edad",
+					                    "Fecha",
+					                    JOptionPane.PLAIN_MESSAGE,
+					                    null,
+					                    intervalos,
+				                  "");
+					if(i=="0-10") {
+						SimpleTable4 frame = new SimpleTable4(); 
+				    	frame.pack(); 
+				    	frame.setVisible(true); 
+					
+					}
+				
+				}
+				if(f=="edad"){
+					JOptionPane.showMessageDialog(combo1,
+						    asesinato("01/07/2017", "41" ,", fue hallado con  multiples heridas a la altura de la cabeza y una herida en el flanco izquierdo, al parecer causadas con arma blanca","se desconoce"),
+						    "Jean Carlos Caceres Vergara",
+						    JOptionPane.PLAIN_MESSAGE);}
+				if(f=="sexo") {
+					JOptionPane.showMessageDialog(combo1,
+						    "*01/01/2017 se desconoce datos de la v√≠ctima y del asesino",
+						    "Wilson Galeano Rodriguez",
+						    JOptionPane.PLAIN_MESSAGE);}
+			}
+			
+        }
+        
+        
+        
+        
         if (combo1.getSelectedItem()=="Antioquia") {
         	UIManager UI= new UIManager();
         	
@@ -146,7 +275,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
            
 
         	UIManager.put("OptionPane.messageFont", new Font("Berlin Sans FB Demi", Font.BOLD, 17));
-           Object[] municipiosAntioquia = {"MedellÌn"};
+           Object[] municipiosAntioquia = {"Medell√≠n"};
           
         	String s = (String)JOptionPane.showInputDialog(
         	                    combo1,
@@ -160,36 +289,36 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
         
 			
 			
-			if(s=="MedellÌn") {
+			if(s=="Medell√≠n") {
 				
-				Object[] victimas= {"Adri·n Felipe LondoÒo","Adriana Sofia Hinestroza","Alejandro Sep˙lveda Quintero","Alias 'la gomela'",
-						"Alias 'Tazmania'","Aliasícachorroí","Alicia LÛpez Guisao","Ana Felisa Tamayo","Anderson Estiven","Anderson Su·rez Arredondo",
-						"AndrÈs Camilo Pineda ","AndrÈs Felipe Agudelo DÌaz","AndrÈs Felipe FlÛrez Idarraga","AndrÈs Ortiz ¡lvarez","¡ngelo Darwin LondoÒo Galeano",
+				Object[] victimas= {"Adri√°n Felipe Londo√±o","Adriana Sofia Hinestroza","Alejandro Sep√∫lveda Quintero","Alias 'la gomela'",
+						"Alias 'Tazmania'","Alias‚Äôcachorro‚Äô","Alicia L√≥pez Guisao","Ana Felisa Tamayo","Anderson Estiven","Anderson Su√°rez Arredondo",
+						"Andr√©s Camilo Pineda ","Andr√©s Felipe Agudelo D√≠az","Andr√©s Felipe Fl√≥rez Idarraga","Andr√©s Ortiz √Ålvarez","√Ångelo Darwin Londo√±o Galeano",
 						"Brayam Smith Arenas Rengifo","Carlos Alberto Barrios","Carlos Arturo Andrade Asprilla","Carlos Villamizar Mantilla","Conrado Calle Ocampo",
-						"Cristian Alexis Jaramillo S·nchez","Dahian Alexander Carrero††","Daihan Ferney Chaverra†MarÌn†","Daniel Lopera Pineda ","Daniel Rojas BlandÛn ",
-						"Daniel Stiven Rico Uribe","Deivy Christian Osorio","Edilson Danilo Murillo GarcÌa","Edison Quintero Zapata ","Eduardo Alberto Oviedo ¡vila",
-						"Edwin Schneider MejÌa RamÌrez","Elcy Yamile Olaya BolÌvar†","Erdinc Alper Yildiz","EstefanÌa Bernal Gaspar","Evelyn Dayana Yarce Molina ",
-						"Federman Vanegas","Fernando Escobar Cardona","Ferney Herrera Escobar","Gabriel MartÌnez Franco","Gladys Yanteh Quintero Jaramillo","Gloria Elena Contreras GutiÈrrez "
-						,"Gustavo Adolfo Callejas Salas","Gustavo Adolfo Sossa Sampedro","Hern·n Alex·nder Cardona Pizarro","Isabel Cristina Cano Correa","Iv·n DarÌo MarÌn Buitrago",
-						"Jaime Nelson Delgado","Jairo Alonso Aristiz·bal Morales ","Javier AndrÈs Lopera Barrera ","Jenifer Vanesa Vargas","Jes˙s Maldonado GarcÈs ","Jhon Alexander M˙nera",
-						"Jhonary Fernando Montoya MejÌa","Johan Esteban Botero ","John Alexander Caro Correa","John Fernando RodrÌguez Ruiz","John Freddy Ballesteros CÛrdova  ","John Jairo GÛmez Su·rez",
-						"Jonatan AndrÈs Valle Mesa ","Jorge Enrique Sossa MartÌnez ","JosÈ Alexander Espinosa","JosÈ Antonio Ocampo ","JosÈ Guillermo GarcÌa R˙a","JosÈ Manuel RodrÌguez Navia",
-						"Juan Camilo Guzm·n Zapata","Juan Carlos Herrera LondoÒo","Juan Carlos Valera Triana","Juan David RamÌrez MarÌn","Juan David Rios Higinio","Juan Esteban Bedoya GutiÈrrez",
-						"Juan Gabriel Cardona Restrepo","Juan Manuel Cano","Juan Wilson Espinal Hern·ndez","Kavir Alonso DÌaz JimÈnez","Kelly Vanesa Henao ","Kevin Estrada Morales ",
-						"Leidy Laura Burgos ChancÌ","Libardo Mariana Pastrana","Lina Patricia Ochoa Zea","Luis Albeiro GÛmez","Luis Eduardo bolaÒos","Luis Felipe C·rdenas Vargas","Manuel RodrÌguez Navia","Marlen Yesenia Diosa Cruz",
-						"Nelson DarÌo Su·rez ","Oscar  Cano Obando ","”scar DarÌo MarÌn Arias ","Otoniel de Jes˙s Tirado GarcÈs","Paulina TascÛn","Robin Alexander Estrada Ospina"};
+						"Cristian Alexis Jaramillo S√°nchez","Dahian Alexander Carrero  ","Daihan Ferney Chaverra Mar√≠n ","Daniel Lopera Pineda ","Daniel Rojas Bland√≥n ",
+						"Daniel Stiven Rico Uribe","Deivy Christian Osorio","Edilson Danilo Murillo Garc√≠a","Edison Quintero Zapata ","Eduardo Alberto Oviedo √Åvila",
+						"Edwin Schneider Mej√≠a Ram√≠rez","Elcy Yamile Olaya Bol√≠var ","Erdinc Alper Yildiz","Estefan√≠a Bernal Gaspar","Evelyn Dayana Yarce Molina ",
+						"Federman Vanegas","Fernando Escobar Cardona","Ferney Herrera Escobar","Gabriel Mart√≠nez Franco","Gladys Yanteh Quintero Jaramillo","Gloria Elena Contreras Guti√©rrez "
+						,"Gustavo Adolfo Callejas Salas","Gustavo Adolfo Sossa Sampedro","Hern√°n Alex√°nder Cardona Pizarro","Isabel Cristina Cano Correa","Iv√°n Dar√≠o Mar√≠n Buitrago",
+						"Jaime Nelson Delgado","Jairo Alonso Aristiz√°bal Morales ","Javier Andr√©s Lopera Barrera ","Jenifer Vanesa Vargas","Jes√∫s Maldonado Garc√©s ","Jhon Alexander M√∫nera",
+						"Jhonary Fernando Montoya Mej√≠a","Johan Esteban Botero ","John Alexander Caro Correa","John Fernando Rodr√≠guez Ruiz","John Freddy Ballesteros C√≥rdova  ","John Jairo G√≥mez Su√°rez",
+						"Jonatan Andr√©s Valle Mesa ","Jorge Enrique Sossa Mart√≠nez ","Jos√© Alexander Espinosa","Jos√© Antonio Ocampo ","Jos√© Guillermo Garc√≠a R√∫a","Jos√© Manuel Rodr√≠guez Navia",
+						"Juan Camilo Guzm√°n Zapata","Juan Carlos Herrera Londo√±o","Juan Carlos Valera Triana","Juan David Ram√≠rez Mar√≠n","Juan David Rios Higinio","Juan Esteban Bedoya Guti√©rrez",
+						"Juan Gabriel Cardona Restrepo","Juan Manuel Cano","Juan Wilson Espinal Hern√°ndez","Kavir Alonso D√≠az Jim√©nez","Kelly Vanesa Henao ","Kevin Estrada Morales ",
+						"Leidy Laura Burgos Chanc√≠","Libardo Mariana Pastrana","Lina Patricia Ochoa Zea","Luis Albeiro G√≥mez","Luis Eduardo bola√±os","Luis Felipe C√°rdenas Vargas","Manuel Rodr√≠guez Navia","Marlen Yesenia Diosa Cruz",
+						"Nelson Dar√≠o Su√°rez ","Oscar  Cano Obando ","√ìscar Dar√≠o Mar√≠n Arias ","Otoniel de Jes√∫s Tirado Garc√©s","Paulina Tasc√≥n","Robin Alexander Estrada Ospina"};
 				
 				String f =(String)JOptionPane.showInputDialog(combo1,"Estos son los asesinatos registrados en medellin en el 2017",
 						"MEDELLIN", JOptionPane.PLAIN_MESSAGE,
 						null, victimas,"");
 			
 			
-				if (f==" AndrÈs Camilo Pineda ") {//barrio 12 de ocutubre
+				if (f==" Andr√©s Camilo Pineda ") {//barrio 12 de ocutubre
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("01/01/2017","24","por una bala perdida","desconocido"),
-				          " AndrÈs Camilo Pineda ",
+				          " Andr√©s Camilo Pineda ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" John Alexander Caro Correa") {//clÌnica el rosario 
+				if (f==" John Alexander Caro Correa") {//cl√≠nica el rosario 
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("01/01/2017","36","con un arma cortopunzante ","desconocido"),
 				          " John Alexander Caro Correa.",
@@ -200,33 +329,33 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          " Libardo Mariana Pastrana",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f=="John Jairo GÛmez Su·rez"){//doce de octubre 
+				if (f=="John Jairo G√≥mez Su√°rez"){//doce de octubre 
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("01/01/2017","34","con un arma de fuego ","desconocido"),
-				          "  John Jairo GÛmez Su·rez",
+				          "  John Jairo G√≥mez Su√°rez",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 				 
 
-				if (f=="  Yiver JimÈnez DÌaz"){//bello horizonte
+				if (f=="  Yiver Jim√©nez D√≠az"){//bello horizonte
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("03/01/2017","4","por un golpe con una varilla met·lica","enfermo mental(se desconoce el nombre"),
-				          "  Yiver JimÈnez DÌaz",
+				          asesinato("03/01/2017","4","por un golpe con una varilla met√°lica","enfermo mental(se desconoce el nombre"),
+				          "  Yiver Jim√©nez D√≠az",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="   AndrÈs Felipe FlÛrez Idarraga"){ //san isidro 
+				if (f=="   Andr√©s Felipe Fl√≥rez Idarraga"){ //san isidro 
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("07/01/2017","34","por dos disparos en la cabeza","se desconoce"),
-				          "   AndrÈs Felipe FlÛrez Idarraga",
+				          "   Andr√©s Felipe Fl√≥rez Idarraga",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="   ”scar DarÌo MarÌn Arias") {//Manrique
+				if (f=="   √ìscar Dar√≠o Mar√≠n Arias") {//Manrique
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("11/01/2017","34","por varias heridas de arma blanca","hijastro(se desconoce el nombre"),
-				          "   ”scar DarÌo MarÌn Arias",
+				          "   √ìscar Dar√≠o Mar√≠n Arias",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="   Alejandro Sep˙lveda Quintero"){//loreto 
+				if (f=="   Alejandro Sep√∫lveda Quintero"){//loreto 
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("10/01/2017","25","por dos impactos de bala en el estomago y en las piernas","se desconoce"),
-				          "   Alejandro Sep˙lveda Quintero ",
+				          "   Alejandro Sep√∫lveda Quintero ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 				if (f=="   Federman Vanegas"){ //belen alta vista
@@ -253,25 +382,25 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          asesinato("15/01/2017","23"," por resistirse a un robo con un arma blanca","se desconoce"), 
 				          "   Uriel Antonio Arenas Guisao ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="  Rodolfo Campillo GambÌn"){ //barrio san fernando
+				if (f=="  Rodolfo Campillo Gamb√≠n"){ //barrio san fernando
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("15/01/2017","27","por multiples golpes de varios tipos  que tenÌan palos y bates","se desconocen los nombres de los agresores"), 
-				          "   Rodolfo Campillo GambÌn ",
+				          asesinato("15/01/2017","27","por multiples golpes de varios tipos  que ten√≠an palos y bates","se desconocen los nombres de los agresores"), 
+				          "   Rodolfo Campillo Gamb√≠n ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="  Gustavo Adolfo Sossa Sampedro") {//kennedy 
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("15/01/2017","?","con un arma blanca por 5 puÒaladas en los brazos abdomen y cabeza "," Robinson Arley Oquendo Sossa "),
+				          asesinato("15/01/2017","?","con un arma blanca por 5 pu√±aladas en los brazos abdomen y cabeza "," Robinson Arley Oquendo Sossa "),
 				          "  Gustavo Adolfo Sossa Sampedro ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f=="  VÌctor Julio Hoyos Maz") {//  aranjuez 
+				if (f=="  V√≠ctor Julio Hoyos Maz") {//  aranjuez 
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("25/01/2017","36","con un arma de fuego","  se desconoce "),
-				          "  VÌctor Julio Hoyos Maz ",
+				          "  V√≠ctor Julio Hoyos Maz ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="  Johan Esteban Botero " ){   //  aranjuez 
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("26/01/2017","11","y arrollado por un camiÛn","  se desconoce "),
+				          asesinato("26/01/2017","11","y arrollado por un cami√≥n","  se desconoce "),
 				          "  Johan Esteban Botero ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
@@ -281,10 +410,10 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          asesinato("28/01/2017","25","por 3 disparos con arma de fuego","pareja sentimental"), 
 				          "   Stephanie Moreno Castro",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="   Jhon Alexander M˙nera"){//belen
+				if (f=="   Jhon Alexander M√∫nera"){//belen
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("30/01/2017","37","con un arma blanca","pareja sentimental"), 
-				          "   Jhon Alexander M˙nera",
+				          "   Jhon Alexander M√∫nera",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="   Gladys Yanteh Quintero Jaramillo"){ // sector de conquistadores
 				     JOptionPane.showMessageDialog(combo1,
@@ -293,15 +422,15 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="   Carlos Alberto Barrios"){ // sector de conquistadores
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("31/01/2017","45","con un arma blanca","  Ramiro de Jes˙s Gonz·lez ¡lvarez,"), 
+				          asesinato("31/01/2017","45","con un arma blanca","  Ramiro de Jes√∫s Gonz√°lez √Ålvarez,"), 
 				          "   Carlos Alberto Barrios",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
-				if (f=="   Sebasti·n Madrid Bedoya"){ // belen
+				if (f=="   Sebasti√°n Madrid Bedoya"){ // belen
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("31/01/2017","29","por varios impactos de bala con arma de fuego","  se desconoce"), 
-				          "   Sebasti·n Madrid Bedoya",
+				          "   Sebasti√°n Madrid Bedoya",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
@@ -313,7 +442,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 
 				 if (f=="  William Esteban Correa Cano"){//doce de octubre 
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("2/02/2017","27","por heridas con cuhillo , botellas y mano propia (esto se lo hicieron el primero de enero pero falleciÛ el 2 de febrero "," JosÈ AndrÈs Buitrago Arango y Jhoana Andrea Tovar PÈrez"),
+				          asesinato("2/02/2017","27","por heridas con cuhillo , botellas y mano propia (esto se lo hicieron el primero de enero pero falleci√≥ el 2 de febrero "," Jos√© Andr√©s Buitrago Arango y Jhoana Andrea Tovar P√©rez"),
 				          "  William Esteban Correa Cano ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
@@ -322,31 +451,31 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          asesinato("2/02/2017","45","con un arma de fuego al parecer por pertenecer a las AUC","  se desconoce"), 
 				          " Jaime Nelson Delgado",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="VÌctor Estiven Bedoya Zapata" ){// robledo
+				if (f=="V√≠ctor Estiven Bedoya Zapata" ){// robledo
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("2/02/2017","27","por 5 impactos de bala dos en el pecho, una en el rostro, una en el cuello y otra en el brazo izquierdo y adem·s fue golpeado" ," se desconoce"), 
-				          " VÌctor Estiven Bedoya Zapata",
+				          asesinato("2/02/2017","27","por 5 impactos de bala dos en el pecho, una en el rostro, una en el cuello y otra en el brazo izquierdo y adem√°s fue golpeado" ," se desconoce"), 
+				          " V√≠ctor Estiven Bedoya Zapata",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="Paulina TascÛn"){ // tejedo
+				if (f=="Paulina Tasc√≥n"){ // tejedo
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("3/02/2017","18","por un disparo en la boca" ," William David PulgarÌn Upegui"), 
-				          " Paulina TascÛn",
+				          asesinato("3/02/2017","18","por un disparo en la boca" ," William David Pulgar√≠n Upegui"), 
+				          " Paulina Tasc√≥n",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="Conrado Calle Ocampo"){// robledo
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("5/02/2017","35","por varias puÒaladas con cuchillas","  Durveney y Jhon Alexander David"), 
+				          asesinato("5/02/2017","35","por varias pu√±aladas con cuchillas","  Durveney y Jhon Alexander David"), 
 				          "Conrado Calle Ocampo",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="Juan Camilo Guzm·n Zapata") {// barrio la esperanza comuna 12
+				if (f=="Juan Camilo Guzm√°n Zapata") {// barrio la esperanza comuna 12
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("5/02/2017","28","por un arma de fuego", " se desconoce"), 
-				          "   Juan Camilo Guzm·n Zapata",
+				          "   Juan Camilo Guzm√°n Zapata",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Edwin Schneider MejÌa RamÌrez") {// barrio la esperanza comuna 12
+				if (f=="Edwin Schneider Mej√≠a Ram√≠rez") {// barrio la esperanza comuna 12
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("5/02/2017","24","por un arma de fuego",  "se desconoce"), 
-				          "    Edwin Schneider MejÌa RamÌrez",
+				          "    Edwin Schneider Mej√≠a Ram√≠rez",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
@@ -359,16 +488,16 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          "    Erdinc Alper Yildiz",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="AndrÈs Ortiz ¡lvarez" ){// bello 
+				if (f=="Andr√©s Ortiz √Ålvarez" ){// bello 
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("9/02/2017","25","con un arma blanca", "David AndrÈs Arias Monsalve "  ), 
-				          "AndrÈs Ortiz ¡lvarez",
+				          asesinato("9/02/2017","25","con un arma blanca", "David Andr√©s Arias Monsalve "  ), 
+				          "Andr√©s Ortiz √Ålvarez",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f==" Cristian Alexis Jaramillo S·nchez" ){// robledo diamante
+				if (f==" Cristian Alexis Jaramillo S√°nchez" ){// robledo diamante
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("9/02/2017","17","con un arma blanca", "se desconoce")  , 
-				"Cristian Alexis Jaramillo S·nchez",
+				"Cristian Alexis Jaramillo S√°nchez",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 				if (f=="Deivy Christian Osorio"){// barrio Brasilia comuna 4 aranjuez
@@ -377,15 +506,15 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				"Deivy Christian Osorio",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="JosÈ Alexander Espinosa"){// barrio bello horizonte
+				if (f=="Jos√© Alexander Espinosa"){// barrio bello horizonte
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("10/02/2017","35","con un arma de fuego", "se desconoce")  , 
-				"JosÈ Alexander Espinosa",
+				"Jos√© Alexander Espinosa",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
                 if (f=="Roberto Alirio Tapias Orrego") {//
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("10/02/2017","55","por actos desconocidos (encontraron al cadaver en descomposiciÛn)","AndrÈs Alexander TobÛn ¡lvarez"),
+				          asesinato("10/02/2017","55","por actos desconocidos (encontraron al cadaver en descomposici√≥n)","Andr√©s Alexander Tob√≥n √Ålvarez"),
 				          "Roberto Alirio Tapias Orrego ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f==" Brayam Smith Arenas Rengifo"){// aures 2 
@@ -398,19 +527,19 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 
 
 
-				if (f==" Juan Carlos Herrera LondoÒo"){// aures 2 
+				if (f==" Juan Carlos Herrera Londo√±o"){// aures 2 
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("17/02/2017","32","mientras usaba el uniforme(era polica) en un enfrentamiento a bala  contra un grupo de delincuentes  ","menor de 17 aÒos(se desconoce el nombre)"  ), 
-				"Juan Carlos Herrera LondoÒo",
+				          asesinato("17/02/2017","32","mientras usaba el uniforme(era polica) en un enfrentamiento a bala  contra un grupo de delincuentes  ","menor de 17 a√±os(se desconoce el nombre)"  ), 
+				"Juan Carlos Herrera Londo√±o",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" John Fernando RodrÌguez Ruiz"){// aures 2 
+				if (f==" John Fernando Rodr√≠guez Ruiz"){// aures 2 
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("17/02/2017","27","Por impactos de bala en un enfrentamiento de la policÌa y grupo delincuencial ","se desconoce")  , 
-				" John Fernando RodrÌguez Ruiz",
+				          asesinato("17/02/2017","27","Por impactos de bala en un enfrentamiento de la polic√≠a y grupo delincuencial ","se desconoce")  , 
+				" John Fernando Rodr√≠guez Ruiz",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f==" Luis Fernando Restrepo Henao"){// barrio Ocho de Marzo, en la comuna de Buenos Aires
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("16/02/2017","50","por una puÒalada con un cuchillo en el pecho ","Jhorman Estiven Restrepo Acevedo(hijastro)"  ), 
+				          asesinato("16/02/2017","50","por una pu√±alada con un cuchillo en el pecho ","Jhorman Estiven Restrepo Acevedo(hijastro)"  ), 
 				" Luis Fernando Restrepo Henao",
 				          JOptionPane.PLAIN_MESSAGE);}
 
@@ -420,7 +549,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				" alias 'Tazmania '",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Juan Carlos Varela Triana"){// barrio Belalc·zar
+				if (f=="Juan Carlos Varela Triana"){// barrio Belalc√°zar
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("18/02/2017","32","fue violentamente agredido y torturado hallado muerto en dentro de una maleta dentro de su carro ", "se desconoce")  , 
 				" Juan Carlos Varela Triana ",
@@ -439,22 +568,22 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				 " Fernando Escobar Cardona ",
 				          JOptionPane.PLAIN_MESSAGE);}*/
 
-				if(f=="Otoniel de Jes˙s Tirado GarcÈs"){//picacho
+				if(f=="Otoniel de Jes√∫s Tirado Garc√©s"){//picacho
 				JOptionPane.showMessageDialog(combo1,
-				          asesinato("18/02/2017","54","por impactos con arma de fuego en TÛrax y abdomen", "un hombre de tez trigueÒa y de unos 28 aÒos de edad ( se desconoce el nombre)"  ), 
-				" Otoniel de Jes˙s Tirado GarcÈs",
+				          asesinato("18/02/2017","54","por impactos con arma de fuego en T√≥rax y abdomen", "un hombre de tez trigue√±a y de unos 28 a√±os de edad ( se desconoce el nombre)"  ), 
+				" Otoniel de Jes√∫s Tirado Garc√©s",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if(f=="Santiago de Jes˙s Uribe"){//barrio EstaciÛn villa
+				if(f=="Santiago de Jes√∫s Uribe"){//barrio Estaci√≥n villa
 				JOptionPane.showMessageDialog(combo1,
 				          asesinato("18/02/2017","?","por cuatro impactos de bala con arma de fuego","se desconoce"), 
-				"Santiago de Jes˙s Uribe Zapata",
+				"Santiago de Jes√∫s Uribe Zapata",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if(f=="Luis Albeiro GÛmez"){//puente madera
+				if(f=="Luis Albeiro G√≥mez"){//puente madera
 				JOptionPane.showMessageDialog(combo1,
 				          asesinato("21/02/2017","59","con un arma de fuego", "se desconoce" ), 
-				"Luis Albeiro GÛmez",
+				"Luis Albeiro G√≥mez",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
@@ -463,10 +592,10 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 
 
 
-				if (f==" JosÈ Manuel RodrÌguez Navia"){// comuna 13
+				if (f==" Jos√© Manuel Rodr√≠guez Navia"){// comuna 13
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("28/02/2017","17","con un arma de fuego", "se desconoce"), 
-				" JosÈ Manuel RodrÌguez Navia",
+				" Jos√© Manuel Rodr√≠guez Navia",
 				          JOptionPane.PLAIN_MESSAGE);
 
 				if (f=="  Juan Gabriel Cardona Restrepo") {//  girardot 
@@ -474,10 +603,10 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          asesinato("22/02/2017","38","con un arma de fuego","  se desconoce "),
 				          "  Juan Gabriel Cardona Restrepo",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="  Pedro JosÈ CÛrdoba Murillo") {//  comuna 13
+				if (f=="  Pedro Jos√© C√≥rdoba Murillo") {//  comuna 13
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("21/02/2017","56","a golpes","  integrantes de grupos delicuenciales ( se desconoce nombres "),
-				          "  Pedro JosÈ CÛrdoba Murillo",
+				          "  Pedro Jos√© C√≥rdoba Murillo",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
 				if (f=="  Gustavo Adolfo Callejas Salas") {//  san antonio de prado
@@ -487,10 +616,10 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
 				 
-				if (f=="  Juan David RamÌrez MarÌn") {//  barrio Santa Fe de la Comuna 15-Guayabal
+				if (f=="  Juan David Ram√≠rez Mar√≠n") {//  barrio Santa Fe de la Comuna 15-Guayabal
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("26/02/2017","?","con un arma de fuego por un disparo en la cabeza"," se desconoce"),
-				          "  Juan David RamÌrez MarÌn ",
+				          "  Juan David Ram√≠rez Mar√≠n ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
 				 
@@ -499,49 +628,49 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          asesinato("27/02/2017","28","con un arma de fuego, 3 impactos de bala"," se desconoce"), 
 				          "  Yuliana Andrea Agudelo ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="  Manuel RodrÌguez Navia") {//  comuna 13
+				if (f=="  Manuel Rodr√≠guez Navia") {//  comuna 13
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("28/02/2017","17","con un arma de fuego adentro de un autob˙s, recibiÛ una bala en el pecho y dos en el cuello "," se desconoce"), 
-				          "  Manuel RodrÌguez Navia",
+				          asesinato("28/02/2017","17","con un arma de fuego adentro de un autob√∫s, recibi√≥ una bala en el pecho y dos en el cuello "," se desconoce"), 
+				          "  Manuel Rodr√≠guez Navia",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f=="  Alicia LÛpez Guisao") {//  barrio Olaya herrera comuna 7     
+				if (f=="  Alicia L√≥pez Guisao") {//  barrio Olaya herrera comuna 7     
 				JOptionPane.showMessageDialog(combo1,
 				          asesinato("2/03/2017","32","con un arma de fuego "," sicarios encampuchados (se descon desconocen nombres)"),
-				          "  Alicia LÛpez Guisao",
+				          "  Alicia L√≥pez Guisao",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Javier AndrÈs Lopera Barrera ") {// comuna 7 sector pajarito
+				if (f==" Javier Andr√©s Lopera Barrera ") {// comuna 7 sector pajarito
 				  JOptionPane.showMessageDialog(combo1,
 				          asesinato("4/03/2017","28","con un arma blanca , tenia varia heridas con armas cortopulzantes ","se desconoce"),
-				          "  Javier AndrÈs Lopera Barrera",
+				          "  Javier Andr√©s Lopera Barrera",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Ricardo Franco LÛpez ") {// barrio belen la palma
+				if (f==" Ricardo Franco L√≥pez ") {// barrio belen la palma
 				  JOptionPane.showMessageDialog(combo1,
 				          asesinato("5/03/2017","68","con un arma de fuego por evitar un robo ","se desconoce"),
-				          "  Ricardo Franco LÛpez",
+				          "  Ricardo Franco L√≥pez",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" Yeison Stiven Cano PÈrez ") {// Comuna 11 ñ Laureles ñ Estadio 
+				if (f==" Yeison Stiven Cano P√©rez ") {// Comuna 11 ‚Äì Laureles ‚Äì Estadio 
 				JOptionPane.showMessageDialog(combo1,
 				          asesinato("7/03/2017","27","con un arma de fuego ","se desconoce"),
-				          "  Yeison Stiven Cano PÈrez",
+				          "  Yeison Stiven Cano P√©rez",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" Gloria Elena Contreras GutiÈrrez ") {// comuna 4 barrio san pedro
+				if (f==" Gloria Elena Contreras Guti√©rrez ") {// comuna 4 barrio san pedro
 				  JOptionPane.showMessageDialog(combo1,
 				          asesinato("10/03/2017","50","por un fuerte golpe en la cabeza con un extintor  ","se desconoce"),
-				          "  Alicia LÛpez Guisao",
+				          "  Alicia L√≥pez Guisao",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" JosÈ Guillermo GarcÌa R˙a") {//   
+				if (f==" Jos√© Guillermo Garc√≠a R√∫a") {//   
 					JOptionPane.showMessageDialog(combo1,
 				          asesinato("10/03/2017","53","por varios impactos de bala ","se desconoce"),
-				          "  Alicia LÛpez Guisao",
+				          "  Alicia L√≥pez Guisao",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" John Freddy Ballesteros CÛrdova ") {//   comuna la candelaria
+				if (f==" John Freddy Ballesteros C√≥rdova ") {//   comuna la candelaria
 				JOptionPane.showMessageDialog(combo1,
 				          asesinato("12/03/2017","37","con 5 impactos  de bala  ","se desconoce"),
-				          "  John Freddy Ballesteros CÛrdova ",
+				          "  John Freddy Ballesteros C√≥rdova ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 if (f=="Juan Manuel Cano") {//barrio robledo
 				 JOptionPane.showMessageDialog(combo1,
@@ -550,73 +679,73 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
-				if (f==" AndrÈs Felipe Agudelo DÌaz ") {// san antonio de prado
+				if (f==" Andr√©s Felipe Agudelo D√≠az ") {// san antonio de prado
 				  JOptionPane.showMessageDialog(combo1,
 				          asesinato("14/03/2017","30","con un arma de fuego ","se desconoce"),
-				          "  AndrÈs Felipe Agudelo DÌaz ",
+				          "  Andr√©s Felipe Agudelo D√≠az ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Jairo Alonso Aristiz·bal Morales ") {//  san antonio de prado
+				if (f==" Jairo Alonso Aristiz√°bal Morales ") {//  san antonio de prado
 				  JOptionPane.showMessageDialog(combo1,
 				          asesinato("14/03/2017","31","con un arma de fuego ","se desconoce"),
-				          "  Alicia LÛpez Guisao",
+				          "  Alicia L√≥pez Guisao",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f=="   EstefanÌa Bernal Gaspar") {//  barrio san javier
+				if (f=="   Estefan√≠a Bernal Gaspar") {//  barrio san javier
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("21/03/2017","13","con un arma de fuego ","su hermano de 15 aÒos ( se desconoce el nombre)"),
-				          "   EstefanÌa Bernal Gaspar",
+				          asesinato("21/03/2017","13","con un arma de fuego ","su hermano de 15 a√±os ( se desconoce el nombre)"),
+				          "   Estefan√≠a Bernal Gaspar",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f=="Weimar DarÌo Tejada ¡lvarez ") {// la loma ñ san cristobal
+				if (f=="Weimar Dar√≠o Tejada √Ålvarez ") {// la loma ‚Äì san cristobal
 				   JOptionPane.showMessageDialog(combo1,
 				          asesinato("24/03/2017","21","con un arma de fuego ","se desconoce"),
-				          "  Weimar DarÌo Tejada ¡lvarez",
+				          "  Weimar Dar√≠o Tejada √Ålvarez",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" Nelson DarÌo Su·rez ") {//  
+				if (f==" Nelson Dar√≠o Su√°rez ") {//  
 					JOptionPane.showMessageDialog(combo1,
 				          asesinato("2/03/2017","49","con un arma de fuego ","se desconoce"),
-				          "  Nelson DarÌo Su·rez",
+				          "  Nelson Dar√≠o Su√°rez",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
 				if (f=="Dahian Alexander Carrero  ") {//  santa cruz
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("28/03/2017","20","con un arma de fuego ","se desconoce"),
-				          "  Alicia LÛpez Guisao",
+				          "  Alicia L√≥pez Guisao",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f==" Daihan Ferney Chaverra MarÌn ") {//  barrio picacho ñ san cristobal
+				if (f==" Daihan Ferney Chaverra Mar√≠n ") {//  barrio picacho ‚Äì san cristobal
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("28/03/2017","17","con un arma de fuego ","se desconoce"),
-				          "  Alicia LÛpez Guisao",
+				          "  Alicia L√≥pez Guisao",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" Jonatan AndrÈs Valle Mesa ") {//  sector Moravia
+				if (f==" Jonatan Andr√©s Valle Mesa ") {//  sector Moravia
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("2/04/2017","30","por dos tiros en la cabeza con arma de fuego ","Fabio Alex·nder RamÌrez Higuita"),
-				          "  Jonatan AndrÈs Valle Mesa  ",
+				          asesinato("2/04/2017","30","por dos tiros en la cabeza con arma de fuego ","Fabio Alex√°nder Ram√≠rez Higuita"),
+				          "  Jonatan Andr√©s Valle Mesa  ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" Sebasti·n Villa Godoy ") {//  buenos aires
+				if (f==" Sebasti√°n Villa Godoy ") {//  buenos aires
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("4/04/2017","25","por 3 impactos de bala","se desconoce"),
-				          "  Sebasti·n Villa Godoy  ",
+				          "  Sebasti√°n Villa Godoy  ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 				 
 				if (f==" Weimar Emilio Henao Pardo ") {// comuna 10 
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("4/04/2017","23","por dos tiros en la cabeza con arma de fuego ","se desconoce"),
-				          "  Jonatan AndrÈs Valle Mesa  ",
+				          "  Jonatan Andr√©s Valle Mesa  ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
 
 
-				if (f==" Sebasti·n MuÒoz Gonz·lez") {// corregimineto san antonio de prado 
+				if (f==" Sebasti√°n Mu√±oz Gonz√°lez") {// corregimineto san antonio de prado 
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("4/04/2017","27","por multiples heridas( se desconoce el arma que se uso) fuego ","se desconoce"),
-				          "  Sebasti·n MuÒoz Gonz·lez",
+				          "  Sebasti√°n Mu√±oz Gonz√°lez",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 				if (f==" Stela Garcia Rojas") {// la palma , belen
@@ -625,21 +754,21 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          "  Stela Garcia Rojas",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f==" Luis Felipe C·rdenas Vargas") {// barrio san bernardo
+				if (f==" Luis Felipe C√°rdenas Vargas") {// barrio san bernardo
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("6/04/2017","21","por arma de fuego ","se desconoce"),
-				          "  Luis Felipe C·rdenas Vargas",
+				          "  Luis Felipe C√°rdenas Vargas",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="Juan Wilson Espinal Hern·ndez") {// corregimiento san cristobal
+				if (f=="Juan Wilson Espinal Hern√°ndez") {// corregimiento san cristobal
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("7/04/2017","49","por 3 impactos de bala , dos en el cuello una en la cabeza ","se desconoce"),
-				          "  Juan Wilson Espinal Hern·ndez ",
+				          "  Juan Wilson Espinal Hern√°ndez ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="  Kavir Alonso DÌaz JimÈnez") {// barrio 20 de Julio de la comuna 13 San Javier.
+				if (f=="  Kavir Alonso D√≠az Jim√©nez") {// barrio 20 de Julio de la comuna 13 San Javier.
 
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("7/04/2017","38","por arma de fuego, tiro en la cabeza ","se desconoce"),
-				          "  Kavir Alonso DÌaz JimÈnez",
+				          "  Kavir Alonso D√≠az Jim√©nez",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
@@ -650,20 +779,20 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f==" Kelly Vanesa Henao ") {//corregimiento santa elena
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("7/04/2017","27"," con un arma de fuego ( se dice que ella misma pagÚ para que la asesinaran","se desconoce"),
+				          asesinato("7/04/2017","27"," con un arma de fuego ( se dice que ella misma pag√≤ para que la asesinaran","se desconoce"),
 				          " Kelly Vanesa Henao ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Elcy Yamile Olaya BolÌvar ") {//barrio la colina
+				if (f=="Elcy Yamile Olaya Bol√≠var ") {//barrio la colina
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("10/04/2017","34","por 10 puÒaladas","Jhon Jairo Gonzalo Restrepo"),
-				          " Elcy Yamile Olaya BolÌvar ",
+				          asesinato("10/04/2017","34","por 10 pu√±aladas","Jhon Jairo Gonzalo Restrepo"),
+				          " Elcy Yamile Olaya Bol√≠var ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="William de Jes˙s MuÒoz Ardila") {//barrio nuevos conquistadores
+				if (f=="William de Jes√∫s Mu√±oz Ardila") {//barrio nuevos conquistadores
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("10/04/2017","61","aparentemente ahorcado con un cable ","se desconoce"),
-				          " William de Jes˙s MuÒoz Ardila",
+				          " William de Jes√∫s Mu√±oz Ardila",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="Daniel Lopera Pineda ") {// santa elena
 				 JOptionPane.showMessageDialog(combo1,
@@ -671,55 +800,55 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          " Daniel Lopera Pineda ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Gabriel MartÌnez Franco") {//barrio guayabal
+				if (f=="Gabriel Mart√≠nez Franco") {//barrio guayabal
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("20/04/2017","52","con arma de fuego "," se desconoce"),
-				          " Gabriel MartÌnez Franco ",
+				          " Gabriel Mart√≠nez Franco ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Manuel Antonio GutiÈrrez CÈspedes") { //
+				if (f=="Manuel Antonio Guti√©rrez C√©spedes") { //
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("20/04/2017","77","con un arma cortopulzante","se desconoce"),
-				          "  Manuel Antonio GutiÈrrez CÈspedes",
+				          "  Manuel Antonio Guti√©rrez C√©spedes",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Gabriel MartÌnez Franco") { //barrio Guayabal
+				if (f==" Gabriel Mart√≠nez Franco") { //barrio Guayabal
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("20/04/2017","50","con arma de fuego , ocho disparos","se desconoce"),
-				          "  Gabriel MartÌnez Franco",
+				          "  Gabriel Mart√≠nez Franco",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" ¡ngelo Darwin LondoÒo Galeano") {//barrio cataluÒa
+				if (f==" √Ångelo Darwin Londo√±o Galeano") {//barrio catalu√±a
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("20/04/2017","33","por un tiro en la cabeza","se desconoce"),
-				          "   ¡ngelo Darwin LondoÒo Galeano",
+				          "   √Ångelo Darwin Londo√±o Galeano",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="JosÈ Antonio Ocampo ") { //el tesoro
+				if (f=="Jos√© Antonio Ocampo ") { //el tesoro
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("22/04/2017","79","con arma de fuego ","se desconoce"),
-				          " JosÈ Antonio Ocampo ",
+				          " Jos√© Antonio Ocampo ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="Sandra Patricia CÛrdoba Mosquera") {//barrio pesebre
+				if (f=="Sandra Patricia C√≥rdoba Mosquera") {//barrio pesebre
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("24/04/2017","35","con un mazo de hierro","Alberto Rold·n Torres QuiÒones"),
-				          " Sandra Patricia CÛrdoba Mosquera ",
+				          asesinato("24/04/2017","35","con un mazo de hierro","Alberto Rold√°n Torres Qui√±ones"),
+				          " Sandra Patricia C√≥rdoba Mosquera ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="Leidy Laura Burgos ChancÌ") {//
+				if (f=="Leidy Laura Burgos Chanc√≠") {//
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("20/04/2017","15","por una herida mortal a la altura del cuello y m·s varias en el tÛrax","se dice que fue Omar AndrÈs Henao CastaÒo"),
-				          " Leidy Laura Burgos ChancÌ ",
+				          asesinato("20/04/2017","15","por una herida mortal a la altura del cuello y m√°s varias en el t√≥rax","se dice que fue Omar Andr√©s Henao Casta√±o"),
+				          " Leidy Laura Burgos Chanc√≠ ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="Adriana Sofia Hinestroza") {//
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("30/04/2017","2","por quemaduras en espalda y piernas y trauma craneoencef·lico","Jessica Sep˙lveda"),
+				          asesinato("30/04/2017","2","por quemaduras en espalda y piernas y trauma craneoencef√°lico","Jessica Sep√∫lveda"),
 				          " Adriana Sofia Hinestroza ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="Jes˙s Maldonado GarcÈs ") {//san javier 2
+				if (f=="Jes√∫s Maldonado Garc√©s ") {//san javier 2
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("5/05/2017","39","con un arma de fuego"," se desconoce"),
-				          " Jes˙s Maldonado GarcÈs ",
+				          " Jes√∫s Maldonado Garc√©s ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f==" Juan David Rios Higinio") { //belen
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("7/05/2017","20","por un impacto de bala en su tÛrax ","se desconoce"),
+				          asesinato("7/05/2017","20","por un impacto de bala en su t√≥rax ","se desconoce"),
 				          " Juan David Rios Higinio ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="Yorman Leandro Montoya") { //barrio aures 2
@@ -727,16 +856,16 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          asesinato("5/05/2017","?","por varios disparos"," se desconoce"),
 				          " Yorman Leandro Montoya ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="Pedro Leonel MuÒoz Mesa") { //belen
+				if (f=="Pedro Leonel Mu√±oz Mesa") { //belen
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("7/05/2017","62","con arma blanca "," se desconoce"),
-				          "  Pedro Leonel MuÒoz Mesa ",
+				          "  Pedro Leonel Mu√±oz Mesa ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Adri·n Felipe LondoÒo") {//
+				if (f=="Adri√°n Felipe Londo√±o") {//
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("8/05/2017","32","por arma de fuego, 4 tiros ","se desconoce"),
-				          " Adri·n Felipe LondoÒo",
+				          " Adri√°n Felipe Londo√±o",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 				if (f=="Ana Felisa Tamayo") {//barrio aranjuez
@@ -756,16 +885,16 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          asesinato("11/05/2017","32","por arma de fuego ", "se desconoce"),
 				          " Oscar  Cano Obando ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Jhonary Fernando Montoya MejÌa") {//barrio castilla
+				if (f==" Jhonary Fernando Montoya Mej√≠a") {//barrio castilla
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("11/04/2017","31","por arma de fuego, tiro en la cabeza ","se desconoce"),
-				          " Jhonary Fernando Montoya MejÌa  ",
+				          " Jhonary Fernando Montoya Mej√≠a  ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Iv·n DarÌo MarÌn Buitrago") {//belen
+				if (f=="Iv√°n Dar√≠o Mar√≠n Buitrago") {//belen
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("11/04/2017","?","por arma de fuego "," se desconoce"),
-				          " Iv·n DarÌo MarÌn Buitrago ",
+				          " Iv√°n Dar√≠o Mar√≠n Buitrago ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 				if (f=="Ferney Herrera Escobar") {//san cristobal
@@ -773,10 +902,10 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          asesinato("11/05/2017","25","por arma de fuego","se desconoce"),
 				          " Ferney Herrera Escobar  ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Wirgen Luis Villalba Hern·ndez") {//
+				if (f==" Wirgen Luis Villalba Hern√°ndez") {//
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("11/05/2017","19","por arma de fuego ","se desconoce"),
-				          " Wirgen Luis Villalba Hern·ndez ",
+				          " Wirgen Luis Villalba Hern√°ndez ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 				if (f==" Marlen Yesenia Diosa Cruz") {// barrio san benito
@@ -787,10 +916,10 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 
 
 
-				if (f==" Weimar Alexis ¡lvarez Vel·squez") {// barrio san benito
+				if (f==" Weimar Alexis √Ålvarez Vel√°squez") {// barrio san benito
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("12/05/2017","26","por 54 heridas con arma blanca ","se desconoce"),
-				          " Weimar Alexis ¡lvarez Vel·squez",
+				          " Weimar Alexis √Ålvarez Vel√°squez",
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
@@ -800,16 +929,16 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          " Pedro Julio Correa Uribe  ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Santiago ¡lvarez Rivera") {//nuevos conquistadores comuna 13
+				if (f=="Santiago √Ålvarez Rivera") {//nuevos conquistadores comuna 13
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("13/05/2017","23","por arma de fuego "," Yefrin Eduardo Serna Martinez"),
-				          " Santiago ¡lvarez Rivera ",
+				          " Santiago √Ålvarez Rivera ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
-				if (f=="Hern·n Alex·nder Cardona Pizarro") {//barrio trinidad
+				if (f=="Hern√°n Alex√°nder Cardona Pizarro") {//barrio trinidad
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("14/05/2017","27","por arma de fuego ","se desconoce"),
-				          " Hern·n Alex·nder Cardona Pizarro",
+				          " Hern√°n Alex√°nder Cardona Pizarro",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="Juan Manuel Cano") {//barrio robledo
 				 JOptionPane.showMessageDialog(combo1,
@@ -818,10 +947,10 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          JOptionPane.PLAIN_MESSAGE);}
 
 
-				if (f=="Sergio AndrÈs GÛmez Serna ") {//san cristobal
+				if (f=="Sergio Andr√©s G√≥mez Serna ") {//san cristobal
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("14/05/2017","28","por arma de fuego ","se desconoce"),
-				          " Sergio AndrÈs GÛmez Serna",
+				          " Sergio Andr√©s G√≥mez Serna",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f=="Jenifer Vanesa Vargas") {//centro de medellin
 				 JOptionPane.showMessageDialog(combo1,
@@ -842,67 +971,67 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 
 				if (f=="  Isabel Cristina Cano Correa") {// barrio san benito
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("19/05/2017","42","por tortura , se desconocen los detalles","Jhonatan Vargas MuÒoz"),
+				          asesinato("19/05/2017","42","por tortura , se desconocen los detalles","Jhonatan Vargas Mu√±oz"),
 				          "  Isabel Cristina Cano Correa ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f=="  Luis Eduardo bolaÒos") {// manrique
+				if (f=="  Luis Eduardo bola√±os") {// manrique
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("21/05/2017","25","con un arma de fuego ","se desconoce"),
-				          "  Luis Eduardo bolaÒos  ",
+				          "  Luis Eduardo bola√±os  ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" Eduardo Alberto Oviedo ¡vila") {// manrique
+				if (f==" Eduardo Alberto Oviedo √Åvila") {// manrique
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("21/05/2017","25","con un arma de fuego ","se desconoce"),
-				          " Eduardo Alberto Oviedo ¡vila ",
+				          " Eduardo Alberto Oviedo √Åvila ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Yovany Rivas RÌos") { // Mirador de Calasanz
+				if (f==" Yovany Rivas R√≠os") { // Mirador de Calasanz
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("21/05/2017","20","con un arma de fuego ","se desconoce"),
-				          " Yovany Rivas RÌos",
+				          " Yovany Rivas R√≠os",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
 				 
 				 
-				if (f=="   Juan Esteban Bedoya GutiÈrrez") {//  el rincon
+				if (f=="   Juan Esteban Bedoya Guti√©rrez") {//  el rincon
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("24/05/2017","15","por 6 impactos de bala  ","se desconoce"),
-				          "  Juan Esteban Bedoya GutiÈrrez ",
+				          "  Juan Esteban Bedoya Guti√©rrez ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f=="  Anderson Su·rez Arredondo") {//  barrio robledo
+				if (f=="  Anderson Su√°rez Arredondo") {//  barrio robledo
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("25/05/2017","16","con un arma de fuego ","se desconoce"),
-				          "  Anderson Su·rez Arredondo ",
+				          "  Anderson Su√°rez Arredondo ",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Jorge Enrique Sossa MartÌnez ") {//  barrio villahermosa
+				if (f==" Jorge Enrique Sossa Mart√≠nez ") {//  barrio villahermosa
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("25/05/2017","59","con un arma de fuego ","se desconocen nombres"),
-				          "  Jorge Enrique Sossa MartÌnez ",
+				          "  Jorge Enrique Sossa Mart√≠nez ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" Daniel Rojas BlandÛn ") {//  san cristobal
+				if (f==" Daniel Rojas Bland√≥n ") {//  san cristobal
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("25/05/2017","26","con un arma de fuego ","se desconoce"),
-				          "  Daniel Rojas BlandÛn  ",
+				          "  Daniel Rojas Bland√≥n  ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
-				if (f==" Alias ëla gomela¥") {//  la candelaria
+				if (f==" Alias ‚Äòla gomela¬¥") {//  la candelaria
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("25/05/2017","16","con un arma de fuego ","se desconoce"),
-				          "  Alias ëla gomela¥",
+				          "  Alias ‚Äòla gomela¬¥",
 				          JOptionPane.PLAIN_MESSAGE);}
 				 
 				 
-				if (f==" Aliasícachorroí") {//  la candelaria
+				if (f==" Alias‚Äôcachorro‚Äô") {//  la candelaria
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("25/05/2017","30","con un arma de fuego ","se desconoce"),
-				          "  Aliasícachorroí",
+				          "  Alias‚Äôcachorro‚Äô",
 				          JOptionPane.PLAIN_MESSAGE);}
-				if (f==" Edilson Danilo Murillo GarcÌa") {// villa del socorro
+				if (f==" Edilson Danilo Murillo Garc√≠a") {// villa del socorro
 				 JOptionPane.showMessageDialog(combo1,
 				          asesinato("29/05/2017","20","en un exorcismo en una iglesia cristiana , por razones desconocidads ","se desconocen nombres"),
-				          " Edilson Danilo Murillo GarcÌa ",
+				          " Edilson Danilo Murillo Garc√≠a ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				if (f=="Robin Alexander Estrada Ospina") {//barrio belen rincon
@@ -916,98 +1045,98 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          " Cristian Alexander Tabares Vanegas",
 				          JOptionPane.PLAIN_MESSAGE);}
                
-                if (f==" Juan JosÈ Guerra PulgarÌn ") {//altavista
+                if (f==" Juan Jos√© Guerra Pulgar√≠n ") {//altavista
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("05/06/2017","17","con arma de fuego ","desconocido"),
-				          " Juan JosÈ Guerra PulgarÌn",
+				          " Juan Jos√© Guerra Pulgar√≠n",
 				          JOptionPane.PLAIN_MESSAGE);}
               
-                if (f==" Juan Pablo JimÈnez FlÛrez ") {//pueblito paisa
+                if (f==" Juan Pablo Jim√©nez Fl√≥rez ") {//pueblito paisa
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("02/06/2017","?","con arma de fuego ","un policia"),
-				          "Juan Pablo JimÈnez FlÛrez",
+				          "Juan Pablo Jim√©nez Fl√≥rez",
 				          JOptionPane.PLAIN_MESSAGE);}
               
-                if (f=="Brahian Alexis Correa S·nchez") {//la esperanza
+                if (f=="Brahian Alexis Correa S√°nchez") {//la esperanza
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("07/06/2017","18","por 9 impactos de bala ","desconocido"),
-				          "Brahian Alexis Correa S·nchez",
+				          "Brahian Alexis Correa S√°nchez",
 				          JOptionPane.PLAIN_MESSAGE);}
                 if (f=="Maritza Mesa Zapata") {//la esperanza
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("07/06/2017","14","por 5 impactos de bala ","desconocido"),
 				          " ",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Jorge AndrÈs Mendoza Vallejo") {// nueva villa
+                if (f=="Jorge Andr√©s Mendoza Vallejo") {// nueva villa
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("07/06/2017","26","por 7 impactos de bala ","desconocido"),
-				          "Jorge AndrÈs Mendoza Vallejo",
+				          "Jorge Andr√©s Mendoza Vallejo",
 				          JOptionPane.PLAIN_MESSAGE);}
                 if (f=="Carlos Alberto Granados Chaverra") {//barrio san martin - comuna 6
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("09/06/2017","22","con arma de fuego ","desconocido"),
 				          "Carlos Alberto Granados Chaverra",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Sinthia Alexa Gallo GarcÈs") {// barrio castilla
+                if (f=="Sinthia Alexa Gallo Garc√©s") {// barrio castilla
 				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("11/06/2017","29","con arma blanca ","Cristian Eduardo Vanegas MuÒoz"),
-				          "Sinthia Alexa Gallo GarcÈs",
+				          asesinato("11/06/2017","29","con arma blanca ","Cristian Eduardo Vanegas Mu√±oz"),
+				          "Sinthia Alexa Gallo Garc√©s",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Brayan Stiven GÛmez PÈrez ") {//la rosa
+                if (f=="Brayan Stiven G√≥mez P√©rez ") {//la rosa
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("11/06/2017","18","con arma blanca ","desconocido"),
-				          "Brayan Stiven GÛmez PÈrez",
+				          "Brayan Stiven G√≥mez P√©rez",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Edwin Santiago Higuita MuÒoz") {//san cristobal
+                if (f=="Edwin Santiago Higuita Mu√±oz") {//san cristobal
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("11/06/2017","19","con arma de fuego ","desconocido"),
 				          " ",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="PÌo Alexander LÛpez") {//el poblado
+                if (f=="P√≠o Alexander L√≥pez") {//el poblado
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("11/06/2017","31","con arma blanca","desconocido"),
-				          "PÌo Alexander LÛpez",
+				          "P√≠o Alexander L√≥pez",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Diego Mauricio GÛmez de Ossa") {// robledo
+                if (f=="Diego Mauricio G√≥mez de Ossa") {// robledo
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("13/06/2017","24","con arma de fuego","desconocido"),
-				          "Diego Mauricio GÛmez de Ossa",
+				          "Diego Mauricio G√≥mez de Ossa",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Alejandro Galeano GÛmez MuÒoz") {// robledo
+                if (f=="Alejandro Galeano G√≥mez Mu√±oz") {// robledo
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("13/06/2017","20","con arma de fuego ","desconocido"),
-				          "Alejandro Galeano GÛmez MuÒoz",
+				          "Alejandro Galeano G√≥mez Mu√±oz",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Duvan Alexander LondoÒo Llano") {// robledo
+                if (f=="Duvan Alexander Londo√±o Llano") {// robledo
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("13/06/2017","21","con arma de fuego ","desconocido"),
-				          "Duvan Alexander LondoÒo Llano",
+				          "Duvan Alexander Londo√±o Llano",
 				          JOptionPane.PLAIN_MESSAGE);}
                 
-                if (f=="Didi Stiven JimÈnez") {// caribe comuna 5
+                if (f=="Didi Stiven Jim√©nez") {// caribe comuna 5
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("13/06/2017","23","con arma de fuego(tiro en la cabeza)","desconocido"),
-				          "Didi Stiven JimÈnez",
+				          "Didi Stiven Jim√©nez",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Juli·n AndrÈs PÈrez") {//playon de los comuneros
+                if (f=="Juli√°n Andr√©s P√©rez") {//playon de los comuneros
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("15/06/2017","27","con arma de fuego ","desconocido"),
-				          "Juli·n AndrÈs PÈrez",
+				          "Juli√°n Andr√©s P√©rez",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Johan AndrÈs Galeano Cuartas") {//san cristobal
+                if (f=="Johan Andr√©s Galeano Cuartas") {//san cristobal
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("15/06/2017","22","con arma de fuego ","desconocido"),
-				          "Johan AndrÈs Galeano Cuartas",
+				          "Johan Andr√©s Galeano Cuartas",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="Alejandro MartÌnez Barrientos") {//san cristobal
+                if (f=="Alejandro Mart√≠nez Barrientos") {//san cristobal
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("15/06/2017","17","con arma de fuego","desconocido"),
-				          "Alejandro MartÌnez Barrientos",
+				          "Alejandro Mart√≠nez Barrientos",
 				          JOptionPane.PLAIN_MESSAGE);}
-                if (f=="LeÛn Mauricio BolÌvar") {//verda predegal de san cristobal(
+                if (f=="Le√≥n Mauricio Bol√≠var") {//verda predegal de san cristobal(
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("15/06/2017","20","con arma de fuego","desconocido"),
-				          "LeÛn Mauricio BolÌvar",
+				          "Le√≥n Mauricio Bol√≠var",
 				          JOptionPane.PLAIN_MESSAGE);}
                 
                 if (f=="Carolina Murillo Mendoza") {//barrio villa liliam couna 8
@@ -1016,16 +1145,16 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				          "Carolina Murillo Mendoza",
 				          JOptionPane.PLAIN_MESSAGE);}
                 
-                if (f=="Juan David Legarda MejÌa") {//
+                if (f=="Juan David Legarda Mej√≠a") {//
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("19/06/2017","20","con arma de fuego ","desconocido"),
-				          "Juan David Legarda MejÌa",
+				          "Juan David Legarda Mej√≠a",
 				          JOptionPane.PLAIN_MESSAGE);}
                 
-                if (f=="Edison EstÌven V·squez") {//
+                if (f=="Edison Est√≠ven V√°squez") {//
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("20/06/2017","20","con arma de fuego(disparo en la boca) ","desconocido"),
-				          "Edison EstÌven V·squez",
+				          "Edison Est√≠ven V√°squez",
 				          JOptionPane.PLAIN_MESSAGE);}
                 
                 if (f==" ") {//
