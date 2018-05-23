@@ -18,6 +18,7 @@ import acm.graphics.*;
 import acm.program.*;
 import cartagenatablas.*;
 import BucaramangaTabla.*;
+import CaliTablas.*;
 
 public class ProyectoC extends GraphicsProgram implements ItemListener{
 	
@@ -34,17 +35,18 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
    
     public ProyectoC() { /*constructor sin parametros para alamacenar el Jcombobox*/
     	 
-    	/*diseño grafico del combobox*/
+    	/*diseno grafico del combobox*/
     	 UIManager.put("ComboBox.background", new ColorUIResource(247,106,106));
         combo1=new JComboBox();
         combo1.setFont(new Font("Serif", Font.BOLD, 20));
         combo1.setPreferredSize(new Dimension(500, 30));
         /*se agregan los items principales*/
         combo1.addItem("Escoje");
-        combo1.addItem("Medellín");
-        combo1.addItem("Cartagena");
+        combo1.addItem("Bogota");
         combo1.addItem("Bucaramanga");
-        combo1.addItem("Bogotá");
+        combo1.addItem("Cali");
+        combo1.addItem("Cartagena");
+        combo1.addItem("Medellin");
        
         
         
@@ -396,7 +398,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				
 				}
 				if(f=="fecha"){
-					Bogota frame1 = new Bogota(); 
+					BUCARAMANGA frame1 = new BUCARAMANGA(); 
 			    	frame1.pack(); 
 			    	frame1.setVisible(true); 
 				}
@@ -412,18 +414,18 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 					                    
 				                  "");
 					if(i=="masculino") {
-						masculinoB frame1 = new masculinoB(); 
+						masculinob frame1 = new masculinob(); 
 				    	frame1.pack(); 
 				    	frame1.setVisible(true); 
 					}
 					if(i=="femenino") {
-						femeninoB frame1 = new femeninoB(); 
+						femeninob frame1 = new femeninob(); 
 				    	frame1.pack(); 
 				    	frame1.setVisible(true); 
 					}
 			}
 				}
-        if (combo1.getSelectedItem()=="Bogotá") {
+        if (combo1.getSelectedItem()=="Bogota") {
         	UIManager UI= new UIManager();
         	
         	UI.put("OptionPane.background", new ColorUIResource(14,242,242));
@@ -452,9 +454,10 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 					                    intervalos,
 				                  "");
 					if(i=="0-10") {
-						tabla010B frame1= new tabla010B(); 
-				    	frame1.pack(); 
-				    	frame1.setVisible(true); 
+						JOptionPane.showMessageDialog(combo1,
+				         "no se registran asesinatos",
+				          " 0-10 años ",
+				          JOptionPane.PLAIN_MESSAGE);
 
 					}
 					if(i=="11-20") {
@@ -496,7 +499,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 					if(i=="71-80") {
 						tabla7180b frame1= new tabla7180b(); 
 				    	frame1.pack(); 
-				    	frame1.setVisible(true); 
+				    	frame1.setVisible(true);
 
 					}
 					if(i=="81-90") {
@@ -518,7 +521,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 				
 				}
 				if(f=="fecha"){
-					BUCARAMANGA frame1 = new BUCARAMANGA(); 
+					Bogota frame1 = new Bogota(); 
 			    	frame1.pack(); 
 			    	frame1.setVisible(true); 
 				}
@@ -534,19 +537,140 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 					                    
 				                  "");
 					if(i=="masculino") {
-						masculinob frame1 = new masculinob(); 
+						masculinoB frame1 = new masculinoB(); 
 				    	frame1.pack(); 
 				    	frame1.setVisible(true); 
 					}
 					if(i=="femenino") {
-						femeninob frame1 = new femeninob(); 
+						femeninoB frame1 = new femeninoB(); 
 				    	frame1.pack(); 
 				    	frame1.setVisible(true); 
 					}
 			}
 				}
+        if (combo1.getSelectedItem()=="Cali") {
+        	UIManager UI= new UIManager();
+        	
+        	UI.put("OptionPane.background", new ColorUIResource(14,242,242));
+        	UI.put("Panel.background", new ColorUIResource(16,200,242)); 
+           
+
+        	UIManager.put("OptionPane.messageFont", new Font("Berlin Sans FB Demi", Font.BOLD, 17));
+         
+				Object[] victimas1 = {"fecha", "edad", "sexo"};
+				String f = (String)JOptionPane.showInputDialog(
+				                    null,
+				                    "Elige el filtro de tu busqueda",
+				                    "Cali",
+				                    JOptionPane.PLAIN_MESSAGE,
+				                    null,
+				                    victimas1,
+				                "");
+				if (f=="edad") {
+					Object[] intervalos = {"0-10", "11-20", "21-30","31-40","41-50","51-60","61-70","71-80","81-90","91-100"};
+					String i = (String)JOptionPane.showInputDialog(
+					                    null,
+					                    "Elige un intervalo de edad",
+					                    "Fecha",
+					                    JOptionPane.PLAIN_MESSAGE,
+					                    null,
+					                    intervalos,
+				                  "");
+					if(i=="0-10") {
+						c0_10 frame1= new c0_10(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); 
+
+					}
+					if(i=="11-20") {
+						c11_20 frame1= new c11_20(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); 
+
+					}
+					if(i=="21-30") {
+						/*c21_30 frame1 = new c21_30(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); */
+
+					}
+					if(i=="31-40") {
+						/*tabla3140b frame1 = new tabla3140b(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); */
+
+					}
+					if(i=="41-50") {
+						/*tabla4150b frame1 = new tabla4150b(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); */
+
+					}
+					if(i=="51-60") {
+						/*tabla5160b frame1 = new tabla5160b(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); 
+*/
+					}
+					if(i=="61-70") {
+						/*tabla6170b frame1 = new tabla6170b(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); */}
+
+					
+					if(i=="71-80") {
+						/*tabla7180b frame1= new tabla7180b(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); */
+
+					}
+					if(i=="81-90") {
+						/*JOptionPane.showMessageDialog(combo1,
+						         "no se registran asesinatos",
+						          " 81-90 años ",
+						          JOptionPane.PLAIN_MESSAGE);*/}
+
+					
+					if(i=="91-100") {
+						/*JOptionPane.showMessageDialog(combo1,
+						         "no se registran asesinatos",
+						          " 91-100 años ",
+						          JOptionPane.PLAIN_MESSAGE);
+*/
+					}
+					
+					
+				
+				}
+				if(f=="fecha"){
+					CaliTablas frame1 = new CaliTablas(); 
+			    	frame1.pack(); 
+			    	frame1.setVisible(true); 
+				}
+				if(f=="sexo") {
+					Object[] intervalos1 = {"masculino", "femenino"};
+					String i = (String)JOptionPane.showInputDialog(
+					                    null,
+					                    "Elige un intervalo de edad",
+					                    "sexo",
+					                    JOptionPane.PLAIN_MESSAGE,
+					                    null,
+					                    intervalos1,
+					                    
+				                  "");
+					if(i=="masculino") {
+						male frame1 = new male(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); 
+					}
+					if(i=="femenino") {
+						female frame1 = new female(); 
+				    	frame1.pack(); 
+				    	frame1.setVisible(true); 
+					}
 			}
-			
+				}
+    }
 			
     
     
