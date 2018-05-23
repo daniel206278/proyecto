@@ -330,7 +330,7 @@ public class ProyectoC extends GraphicsProgram implements ItemListener{
 					                    intervalos,
 				                  "");
 					if(i=="0-10") {
-						tabla010b frame1= new tabla010b(); 
+						tabla010B frame1= new tabla010B(); 
 				    	frame1.pack(); 
 				    	frame1.setVisible(true); 
 

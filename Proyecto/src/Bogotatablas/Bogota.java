@@ -552,6 +552,7 @@ Object[][] data = {
 		{"21/06/2017", "EL RESTREPO", "ARMA DE FUEGO",29, "masculino"},
 		{"21/06/2017", "LA CATEDRAL", "ARMA BLANCA",54, "masculino"},
 		{"22/06/2017", "LA PENINSULA", "ARMA DE FUEGO",19, "masculino"},
+		{"22/06/2017", "LA BELLEZA", "ARMA DE FUEGO",14, "femenino"},
 		{"24/06/2017", "URB. EL TANQUE", "ARMA DE FUEGO",59, "masculino"},
 		{"24/06/2017", "LAS COLINAS", "ARMA BLANCA",30, "masculino"},
 		{"25/06/2017", "SAN MARTIN", "ARMA DE FUEGO",29, "masculino"},
