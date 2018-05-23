@@ -1,3 +1,4 @@
+package Medellintablas;
 import javax.swing.JTable; 
 import javax.swing.JScrollPane; 
 import javax.swing.JFrame; 
@@ -7,7 +8,7 @@ import java.awt.event.*;
 public class SimpleTable2 extends JFrame {
 
 public SimpleTable2() { 
-super("Ejemplo 1");
+super("Homicidios Medellín ordenados por fecha");
 
 //Array bidimensional de objetos con los datos de la tabla 
 Object[][] data = { 

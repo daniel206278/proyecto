@@ -136,7 +136,7 @@ public class proyecto extends GraphicsProgram implements ItemListener{
           
         	String s = (String)JOptionPane.showInputDialog(
         	                    combo1,
-        	                    "Escoje Un Muncipio,Ciudad o Corregimiento territorial"
+        	                    "Escoje la capital de antioquia"
         	                    ,
         	                    "Antioquia",
         	                    JOptionPane.PLAIN_MESSAGE,
@@ -162,18 +162,14 @@ public class proyecto extends GraphicsProgram implements ItemListener{
 						"Jonatan Andrés Valle Mesa ","Jorge Enrique Sossa Martínez ","José Alexander Espinosa","José Antonio Ocampo ","José Guillermo García Rúa","José Manuel Rodríguez Navia",
 						"Juan Camilo Guzmán Zapata","Juan Carlos Herrera Londoño","Juan Carlos Valera Triana","Juan David Ramírez Marín","Juan David Rios Higinio","Juan Esteban Bedoya Gutiérrez",
 						"Juan Gabriel Cardona Restrepo","Juan Manuel Cano","Juan Wilson Espinal Hernández","Kavir Alonso Díaz Jiménez","Kelly Vanesa Henao ","Kevin Estrada Morales ",
-						"Leidy Laura Burgos Chancí","Libardo Mariana Pastrana","Luis Albeiro Gómez","Luis Eduardo bolaños","Luis Felipe Cárdenas Vargas","Manuel Rodríguez Navia","Marlen Yesenia Diosa Cruz",
-						"Nelson Darío Suárez ","Oscar  Cano Obando ","Óscar Darío Marín Arias ","Otoniel de Jesús Tirado Garcés","Paulina Tascón"};
+						"Leidy Laura Burgos Chancí","Libardo Mariana Pastrana","Lina Patricia Ochoa Zea","Luis Albeiro Gómez","Luis Eduardo bolaños","Luis Felipe Cárdenas Vargas","Manuel Rodríguez Navia","Marlen Yesenia Diosa Cruz",
+						"Nelson Darío Suárez ","Oscar  Cano Obando ","Óscar Darío Marín Arias ","Otoniel de Jesús Tirado Garcés","Paulina Tascón","Robin Alexander Estrada Ospina"};
 				
 				String f =(String)JOptionPane.showInputDialog(combo1,"Estos son los asesinatos registrados en medellin en el 2017",
 						"MEDELLIN", JOptionPane.PLAIN_MESSAGE,
 						null, victimas,"");
 			
-				if (f==" Robin Alexander Estrada Ospina ") {//barrio belen rincon
-				     JOptionPane.showMessageDialog(combo1,
-				          asesinato("01/01/2017","22","con dos disparos en la cabeza","desconocido"),
-				          " Robin Alexander Estrada Ospina ",
-				          JOptionPane.PLAIN_MESSAGE);}
+			
 				if (f==" Andrés Camilo Pineda ") {//barrio 12 de ocutubre
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("01/01/2017","24","por una bala perdida","desconocido"),
@@ -371,6 +367,12 @@ public class proyecto extends GraphicsProgram implements ItemListener{
 				     JOptionPane.showMessageDialog(combo1,
 				          asesinato("10/02/2017","35","con un arma de fuego", "se desconoce")  , 
 				"José Alexander Espinosa",
+				          JOptionPane.PLAIN_MESSAGE);}
+				 
+                if (f=="Roberto Alirio Tapias Orrego") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("10/02/2017","55","por actos desconocidos (encontraron al cadaver en descomposición)","Andrés Alexander Tobón Álvarez"),
+				          "Roberto Alirio Tapias Orrego ",
 				          JOptionPane.PLAIN_MESSAGE);}
 				if (f==" Brayam Smith Arenas Rengifo"){// aures 2 
 				     JOptionPane.showMessageDialog(combo1,
@@ -640,7 +642,7 @@ public class proyecto extends GraphicsProgram implements ItemListener{
 
 				if (f=="Elcy Yamile Olaya Bolívar ") {//barrio la colina
 				 JOptionPane.showMessageDialog(combo1,
-				          asesinato("10/04/2017","34","por 10 puñaladas","pareja sentimental (se desconoce el nombre)"),
+				          asesinato("10/04/2017","34","por 10 puñaladas","Jhon Jairo Gonzalo Restrepo"),
 				          " Elcy Yamile Olaya Bolívar ",
 				          JOptionPane.PLAIN_MESSAGE);}
 
@@ -888,6 +890,177 @@ public class proyecto extends GraphicsProgram implements ItemListener{
 				          asesinato("29/05/2017","20","en un exorcismo en una iglesia cristiana , por razones desconocidads ","se desconocen nombres"),
 				          " Edilson Danilo Murillo García ",
 				          JOptionPane.PLAIN_MESSAGE);}
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				if (f=="Robin Alexander Estrada Ospina") {//barrio belen rincon
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("01/01/2017","22","con dos disparos en la cabeza","desconocido"),
+				          " Robin Alexander Estrada Ospina ",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Cristian Alexander Tabares Vanegas ") {//barrio el salado
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("02/06/2017","20","por 9 impactos de bala ","desconocido"),
+				          " Cristian Alexander Tabares Vanegas",
+				          JOptionPane.PLAIN_MESSAGE);}
+               
+                if (f==" Juan José Guerra Pulgarín ") {//altavista
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("05/06/2017","17","con arma de fuego ","desconocido"),
+				          " Juan José Guerra Pulgarín",
+				          JOptionPane.PLAIN_MESSAGE);}
+              
+                if (f==" Juan Pablo Jiménez Flórez ") {//pueblito paisa
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("02/06/2017","?","con arma de fuego ","un policia"),
+				          "Juan Pablo Jiménez Flórez",
+				          JOptionPane.PLAIN_MESSAGE);}
+              
+                if (f=="Brahian Alexis Correa Sánchez") {//la esperanza
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("07/06/2017","18","por 9 impactos de bala ","desconocido"),
+				          "Brahian Alexis Correa Sánchez",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Maritza Mesa Zapata") {//la esperanza
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("07/06/2017","14","por 5 impactos de bala ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Jorge Andrés Mendoza Vallejo") {// nueva villa
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("07/06/2017","26","por 7 impactos de bala ","desconocido"),
+				          "Jorge Andrés Mendoza Vallejo",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Carlos Alberto Granados Chaverra") {//barrio san martin - comuna 6
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("09/06/2017","22","con arma de fuego ","desconocido"),
+				          "Carlos Alberto Granados Chaverra",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Sinthia Alexa Gallo Garcés") {// barrio castilla
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("11/06/2017","29","con arma blanca ","Cristian Eduardo Vanegas Muñoz"),
+				          "Sinthia Alexa Gallo Garcés",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Brayan Stiven Gómez Pérez ") {//la rosa
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("11/06/2017","18","con arma blanca ","desconocido"),
+				          "Brayan Stiven Gómez Pérez",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Edwin Santiago Higuita Muñoz") {//san cristobal
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("11/06/2017","19","con arma de fuego ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Pío Alexander López") {//el poblado
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("11/06/2017","31","con arma blanca","desconocido"),
+				          "Pío Alexander López",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Diego Mauricio Gómez de Ossa") {// robledo
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("13/06/2017","24","con arma de fuego","desconocido"),
+				          "Diego Mauricio Gómez de Ossa",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Alejandro Galeano Gómez Muñoz") {// robledo
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("13/06/2017","20","con arma de fuego ","desconocido"),
+				          "Alejandro Galeano Gómez Muñoz",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Duvan Alexander Londoño Llano") {// robledo
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("13/06/2017","21","con arma de fuego ","desconocido"),
+				          "Duvan Alexander Londoño Llano",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+                if (f=="Didi Stiven Jiménez") {// caribe comuna 5
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("13/06/2017","23","con arma de fuego(tiro en la cabeza)","desconocido"),
+				          "Didi Stiven Jiménez",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Julián Andrés Pérez") {//playon de los comuneros
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("15/06/2017","27","con arma de fuego ","desconocido"),
+				          "Julián Andrés Pérez",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Johan Andrés Galeano Cuartas") {//san cristobal
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("15/06/2017","22","con arma de fuego ","desconocido"),
+				          "Johan Andrés Galeano Cuartas",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="Alejandro Martínez Barrientos") {//san cristobal
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("15/06/2017","17","con arma de fuego","desconocido"),
+				          "Alejandro Martínez Barrientos",
+				          JOptionPane.PLAIN_MESSAGE);}
+                if (f=="León Mauricio Bolívar") {//verda predegal de san cristobal(
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("15/06/2017","20","con arma de fuego","desconocido"),
+				          "León Mauricio Bolívar",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+                if (f=="Carolina Murillo Mendoza") {//barrio villa liliam couna 8
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("19/06/2017","15","con arma de fuego(bala perdida) ","desconocido"),
+				          "Carolina Murillo Mendoza",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+                if (f=="Juan David Legarda Mejía") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("19/06/2017","20","con arma de fuego ","desconocido"),
+				          "Juan David Legarda Mejía",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+                if (f=="Edison Estíven Vásquez") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("20/06/2017","20","con arma de fuego(disparo en la boca) ","desconocido"),
+				          "Edison Estíven Vásquez",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+                if (f==" ") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("02/06/2017","0","con arma de fuego ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+                if (f=="  ") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("02/06/2017","0","con arma de fuego ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+                if (f=="  ") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("02/06/2017","0","con arma de fuego ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+                if (f=="  ") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("02/06/2017","0","con arma de fuego ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+                
+              
+                if (f=="Lina Patricia Ochoa Zea") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("05/07/2017","41","con arma de fuego ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+              
+              
+                if (f=="  ") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("02/06/2017","0","con arma de fuego ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+              
+                if (f=="  ") {//
+				     JOptionPane.showMessageDialog(combo1,
+				          asesinato("02/06/2017","0","con arma de fuego ","desconocido"),
+				          " ",
+				          JOptionPane.PLAIN_MESSAGE);}
+              
+                
+               
+
 
 			}
 			}
@@ -899,14 +1072,13 @@ public class proyecto extends GraphicsProgram implements ItemListener{
          
         
 
-    	
     //metodo principal donde se ejecuta el programa
     public void run() {
       
     	//estetica de la aplicacion
-    	GImage fondo = new GImage("fondo.jpg" );
-    	add(fondo);
-    	fondo.setSize(1500,1200);//estetica de la aplicacion
+    	GImage fondoo = new GImage("fondoo.jpg" );
+    	add(fondoo);
+    	fondoo.setSize(1500,1200);//estetica de la aplicacion
     	GLabel bienvenida = new GLabel("Homicidios del 2017 en  las capitales de los departamentos de Colombia");
        bienvenida.setColor(Color.BLACK);//estetica de la aplicacion
        bienvenida.setFont(FUENTE_TITULO);//estetica de la aplicacion
